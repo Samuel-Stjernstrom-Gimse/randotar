@@ -12,7 +12,7 @@ const ThemeSwitch = ({ darkMode, toggleDarkMode }: Props) => {
 
     return (
         <>
-            <Tooltip title={'Samuel er den dumme guttn'}>
+            <Tooltip title={darkMode ? 'dark theme' : 'light theme'} arrow={true} >
                 <Switch
                     checked={darkMode}
                     onChange={toggleDarkMode}

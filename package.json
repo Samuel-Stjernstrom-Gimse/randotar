@@ -1,6 +1,6 @@
 {
 	"name": "randotar",
-	"version": "0.1.0",
+	"version": "0.0.1",
 	"private": true,
 	"dependencies": {
 		"@emotion/react": "^11.11.3",
@@ -11,9 +11,6 @@
 		"@fortawesome/free-solid-svg-icons": "^6.5.1",
 		"@fortawesome/react-fontawesome": "^0.2.0",
 		"@mui/material": "^5.15.4",
-		"@testing-library/jest-dom": "^5.17.0",
-		"@testing-library/react": "^13.4.0",
-		"@testing-library/user-event": "^13.5.0",
 		"@types/node": "^16.18.70",
 		"@types/react": "^18.2.47",
 		"@types/react-dom": "^18.2.18",
@@ -28,8 +25,7 @@
 	},
 	"eslintConfig": {
 		"extends": [
-			"react-app",
-			"react-app/jest"
+			"react-app"
 		]
 	},
 	"browserslist": {

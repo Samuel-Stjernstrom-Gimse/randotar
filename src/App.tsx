@@ -1,26 +1,34 @@
-import React, {useState} from 'react';
-import {Box, CssBaseline, ThemeProvider} from "@mui/material";
-import ThemeSwitch from "./components/ThemeSwitch";
-import {getTheme} from "./theme/theme";
+import React, {useEffect, useState} from 'react';
+import {CssBaseline, ThemeProvider} from "@mui/material";
+import {getTheme} from "./themes/theme";
 import Header from "./components/Header";
+import MainSection from "./components/MainSection";
 
 const App = () => {
-
-    const [darkMode, setDarkMode] = useState(true)
+    const localStorageThemeState = 'hasDarkTheme'
+    const [darkMode, setDarkMode] = useState<boolean>(true)
 
     const toggleDarkMode = () => {
-        setDarkMode(!darkMode)
+        const newTheme = !darkMode
+        setDarkMode(newTheme);
+        localStorage.setItem(localStorageThemeState, darkMode.toString())
     }
+
+    useEffect(() => {
+        const themeState = localStorage.getItem(localStorageThemeState)
+        if (themeState !== null) {
+            setDarkMode(themeState === 'false')
+        }
+    }, [])
 
     return (
         <>
-            <ThemeProvider theme={getTheme(darkMode)}>
-                <CssBaseline enableColorScheme/>
-                <Box>
-                    <Header/>
-                    <ThemeSwitch darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-                </Box>
-            </ThemeProvider>
+            <ThemeProvider theme={getTheme(darkMode)} >
+                <CssBaseline enableColorScheme />
+                <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+                <MainSection />
+
+            </ThemeProvider >
         </>
     )
 }
