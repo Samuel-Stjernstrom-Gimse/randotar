@@ -3,6 +3,7 @@ import {CssBaseline, ThemeProvider} from "@mui/material";
 import {getTheme} from "./themes/theme";
 import Header from "./components/Header";
 import MainSection from "./components/MainSection";
+import Footer from "./components/Footer";
 
 const App = () => {
     const localStorageThemeState = 'hasDarkTheme'
@@ -27,6 +28,7 @@ const App = () => {
                 <CssBaseline enableColorScheme />
                 <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                 <MainSection />
+                <Footer/>
 
             </ThemeProvider >
         </>
