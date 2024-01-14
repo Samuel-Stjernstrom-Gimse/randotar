@@ -19,6 +19,13 @@
 		"react-scripts": "5.0.1",
 		"typescript": "^4.9.5"
 	},
+	"alias": {
+		"$static": "./src/static",
+		"$images": "./src/static/images",
+		"$main": "./src/static/images/main",
+		"$accessosories": "./src/static/images/accessosories",
+		"$headgear": "./src/static/images/headgear"
+	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build"
